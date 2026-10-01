@@ -38,7 +38,7 @@ function SeoManager() {
   useEffect(() => {
     const path = location.split("?")[0] || "/";
     const seo = SEO_BY_PATH[path] ?? { title: "Page not found | AI DUNIYA", description: "The requested AI DUNIYA page could not be found." };
-    const canonicalUrl = `https://ai-duniya.vercel.app${path === "/" ? "/" : path}`;
+    const canonicalUrl = `https://ai-duniya-nine.vercel.app${path === "/" ? "/" : path}`;
     document.title = seo.title;
 
     const setMeta = (attribute: "name" | "property", key: string, content: string) => {
