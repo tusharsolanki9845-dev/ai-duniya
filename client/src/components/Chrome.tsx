@@ -99,6 +99,9 @@ export function SiteHeader() {
                     </NavAnchor>
                   </motion.div>
                 ))}
+                <button className="flex items-center justify-between border-b border-white/10 py-5 text-left font-[family-name:var(--font-display)] text-3xl tracking-tight" onClick={() => { setOpen(false); openCommand(); }}>
+                  <span>Search</span><Command size={20} className="text-lime" />
+                </button>
                 <button className="btn btn-lime mt-8" onClick={() => { setOpen(false); openAssistant(); }}><Sparkles size={15} /> Ask the guide</button>
               </nav>
             </motion.div>

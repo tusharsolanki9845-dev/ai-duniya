@@ -1,0 +1,7 @@
+<?xml version='1.0' encoding='utf-8'?>
+<resources>
+    <string name="app_name">AI DUNIYA</string>
+    <string name="title_activity_main">AI DUNIYA</string>
+    <string name="package_name">ai.duniya.app</string>
+    <string name="custom_url_scheme">ai.duniya.app</string>
+</resources>

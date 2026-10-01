@@ -9,7 +9,7 @@ export default function NotFound() {
       <div className="relative z-10">
         <div className="eyebrow justify-center">Signal lost</div>
         <div className="glitch mt-6 font-[family-name:var(--font-display)] text-[clamp(7rem,26vw,16rem)] font-medium leading-[.85] tracking-tighter" data-text="404">404</div>
-        <p className="lede mx-auto mt-6">This page drifted out of range. It may have moved, or the link may be mistyped.</p>
+        <p className="lede mx-auto mt-6">This page is not available yet. More AI DUNIYA experiences are coming soon, or the link may be mistyped.</p>
         <div className="mt-9 flex flex-wrap justify-center gap-3">
           <NavAnchor href="/" className="btn btn-lime"><Compass size={16} /> Back to home</NavAnchor>
           <NavAnchor href="/courses" className="btn btn-ghost">Browse courses</NavAnchor>

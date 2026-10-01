@@ -44,7 +44,12 @@ export default function Courses() {
           <div className="mono mb-6 text-[11px] uppercase tracking-[.14em] text-white/60" aria-live="polite" data-testid="course-count">{list.length} course{list.length === 1 ? "" : "s"}</div>
 
           {list.length === 0 ? (
-            <div className="glass card grid place-items-center gap-4 py-20 text-center"><SearchX size={36} className="text-white/40" /><p className="text-lg">No courses match those filters.</p><button className="btn btn-ghost btn-sm" onClick={reset}>Clear filters</button></div>
+            <div className="glass card grid place-items-center gap-4 py-20 text-center">
+              <SearchX size={36} className="text-white/40" />
+              <div className="eyebrow !mb-0">More learning paths coming soon</div>
+              <p className="max-w-md text-lg">Nothing matches these filters yet. Clear the filters or check back soon for new AI DUNIYA courses.</p>
+              <button className="btn btn-ghost btn-sm" onClick={reset}>Clear filters</button>
+            </div>
           ) : (
             <div className="grid gap-5 md:grid-cols-2 lg:grid-cols-3">
               {list.map((c, i) => (

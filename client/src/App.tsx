@@ -21,6 +21,55 @@ import Examination from "./pages/Examination";
 import Contact from "./pages/Contact";
 import NotFound from "./pages/NotFound";
 
+const SEO_BY_PATH: Record<string, { title: string; description: string }> = {
+  "/": { title: "AI DUNIYA — Make the future make sense.", description: "AI DUNIYA is a learning and innovation studio for AI courses, hands-on labs, robotics, examinations and practical products." },
+  "/about": { title: "About AI DUNIYA | Learn, Build, Lead", description: "Meet the people behind AI DUNIYA and explore the practical, human approach behind our AI learning studio." },
+  "/labs": { title: "AI Labs | Experiments, Simulators and Tools | AI DUNIYA", description: "Explore interactive AI labs, prompt tools, neural sandboxes, tokenizers and robotics simulations from AI DUNIYA." },
+  "/labs/ai": { title: "AI Learning Labs | Build by Doing | AI DUNIYA", description: "Practice AI concepts through interactive tools and guided experiments designed for curious builders." },
+  "/labs/robotics": { title: "Robotics Labs and Simulator | AI DUNIYA", description: "Experiment with robotics concepts and interactive simulations while learning how AI moves through the physical world." },
+  "/courses": { title: "AI Courses for Modern Teams and Builders | AI DUNIYA", description: "Browse practical AI, coding, data and robotics courses for beginners, teams and people building what's next." },
+  "/examination": { title: "AI Examinations and Practice Tests | AI DUNIYA", description: "Test your AI knowledge with practical examinations designed to show what you can do, not just what you can recall." },
+  "/contact": { title: "Contact AI DUNIYA | Start a Conversation", description: "Talk to AI DUNIYA about courses, labs, workshops, business learning and practical AI products." },
+};
+
+function SeoManager() {
+  const [location] = useLocation();
+
+  useEffect(() => {
+    const path = location.split("?")[0] || "/";
+    const seo = SEO_BY_PATH[path] ?? { title: "Page not found | AI DUNIYA", description: "The requested AI DUNIYA page could not be found." };
+    const canonicalUrl = `https://ai-duniya.vercel.app${path === "/" ? "/" : path}`;
+    document.title = seo.title;
+
+    const setMeta = (attribute: "name" | "property", key: string, content: string) => {
+      let element = document.head.querySelector<HTMLMetaElement>(`meta[${attribute}="${key}"]`);
+      if (!element) {
+        element = document.createElement("meta");
+        element.setAttribute(attribute, key);
+        document.head.appendChild(element);
+      }
+      element.content = content;
+    };
+
+    setMeta("name", "description", seo.description);
+    setMeta("property", "og:title", seo.title);
+    setMeta("property", "og:description", seo.description);
+    setMeta("property", "og:url", canonicalUrl);
+    setMeta("name", "twitter:title", seo.title);
+    setMeta("name", "twitter:description", seo.description);
+
+    let canonical = document.head.querySelector<HTMLLinkElement>('link[rel="canonical"]');
+    if (!canonical) {
+      canonical = document.createElement("link");
+      canonical.rel = "canonical";
+      document.head.appendChild(canonical);
+    }
+    canonical.href = canonicalUrl;
+  }, [location]);
+
+  return null;
+}
+
 /** Scrolls to top on route change, or to the #hash target when one is present. */
 function ScrollManager() {
   const [location] = useLocation();
@@ -61,6 +110,7 @@ function App() {
             <Toaster theme="dark" position="top-center" />
             <a href="#main" className="sr-only focus:not-sr-only focus:fixed focus:left-4 focus:top-4 focus:z-[100] focus:rounded-full focus:bg-lime focus:px-5 focus:py-3 focus:text-sm focus:font-bold focus:text-[#0b0d0c]">Skip to content</a>
             <ScrollManager />
+            <SeoManager />
             <ScrollProgress />
             <CursorGlow />
             <SiteHeader />
