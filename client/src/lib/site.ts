@@ -15,7 +15,7 @@ export type Founder = { name: string; role: string; initials: string; bio: strin
 export const FOUNDERS: Founder[] = [
   {
     name: "Tushar Solanki",
-    role: "Co-Founder",
+    role: "CEO & Co-Founder",
     initials: "TS",
     bio: [
       "My journey in technology started with curiosity and a strong desire to understand how modern technology works. As a BTech student specializing in Artificial Intelligence and Machine Learning, I am continuously exploring programming, web development, AI, and real-world technology solutions.",
@@ -25,10 +25,10 @@ export const FOUNDERS: Founder[] = [
   },
   {
     name: "Piyush Rastogi",
-    role: "Co-Founder · CSE (AI/ML) Student",
+    role: "CEO & Founder",
     initials: "PR",
     bio: [
-      "I’m Piyush Rastogi, a CSE (AI/ML) student at IEC College of Engineering and Technology and the Founder & CEO of Alpha Tech Solutions.",
+      "I’m Piyush Rastogi, the CEO & Founder of Alpha Tech Solutions and a CSE (AI/ML) student at IEC College of Engineering and Technology.",
       "Based in Nanpara, Uttar Pradesh, India, I’m building my foundations in software development, AI/ML, frontend engineering, and business while turning ideas into practical digital products.",
       "My public learning journey includes frontend development work with CodeAlpha, an AI & ML internship with Codomax Digital Solutions, and foundational learning in AWS, generative AI, and software development.",
       "At Alpha Tech Solutions, I combine technology, creativity, and business understanding to help clients build useful digital experiences and move forward with confidence.",
