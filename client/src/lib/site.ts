@@ -25,17 +25,14 @@ export const FOUNDERS: Founder[] = [
   },
   {
     name: "Piyush Rastogi",
-    role: "Founder & CEO, Alpha Tech Solutions",
+    role: "Co-Founder · CSE (AI/ML) Student",
     initials: "PR",
     bio: [
-      "I’m Piyush Rastogi, the Founder & CEO of Alpha Tech Solutions. I am currently pursuing my B.Tech, with a strong interest in software development, technology, and business.",
-      "I belong to Nanpara, Bahraich, Uttar Pradesh, and my journey has been driven by a passion for learning, building, and creating opportunities through technology.",
-      "Alongside my studies, I have been developing my skills in software development and business management. I believe that technology is not just about writing code — it is about understanding real-world problems and creating simple, effective solutions.",
-      "My entrepreneurial journey led me to establish Alpha Tech Solutions, with the vision of providing modern software and digital solutions to businesses, organizations, and individuals.",
-      "At Alpha Tech Solutions, our focus is on combining technology, creativity, and business understanding to help our clients build, grow, and succeed in the digital world.",
-      "My vision is to build Alpha Tech Solutions into a trusted technology company that creates innovative software solutions and helps businesses move forward digitally.",
-      "From Nanpara, Bahraich to building my own technology venture while pursuing my B.Tech, my journey is still in its early stages. Every project, challenge, and experience continues to teach me something new.",
-      "I believe that big dreams start with small steps — and this is just the beginning of my journey.",
+      "I’m Piyush Rastogi, a CSE (AI/ML) student at IEC College of Engineering and Technology and the Founder & CEO of Alpha Tech Solutions.",
+      "Based in Nanpara, Uttar Pradesh, India, I’m building my foundations in software development, AI/ML, frontend engineering, and business while turning ideas into practical digital products.",
+      "My public learning journey includes frontend development work with CodeAlpha, an AI & ML internship with Codomax Digital Solutions, and foundational learning in AWS, generative AI, and software development.",
+      "At Alpha Tech Solutions, I combine technology, creativity, and business understanding to help clients build useful digital experiences and move forward with confidence.",
+      "I believe big dreams start with small steps — and every project, challenge, and learning opportunity is part of the journey.",
     ],
   },
 ];
@@ -48,6 +45,7 @@ export const NAV: NavItem[] = [
   { label: "Courses", href: "/courses" },
   { label: "Examination", href: "/examination" },
   { label: "Products", href: "/#products" },
+  { label: "Work", href: "/#work" },
   { label: "Business", href: "/#business" },
   { label: "Contact", href: "/contact" },
 ];
@@ -253,6 +251,20 @@ export const PRODUCTS = [
       "From first prototype to production-grade system, we help bold teams ship AI that earns its place.",
     points: ["Rapid prototypes that earn their next step", "Evaluation and guardrails from day one", "Hand-over your team can maintain"],
     hue: "violet",
+  },
+] as const;
+
+/* ------------------------------------------------------------------ */
+/* Selected work                                                       */
+/* ------------------------------------------------------------------ */
+
+export const SHOWCASE = [
+  {
+    title: "Shiv Shankar Jewellery",
+    label: "Client build · jewellery storefront",
+    description: "A live jewellery storefront designed to help customers explore gold and silver collections through a polished, mobile-friendly shopping experience.",
+    tags: ["E-commerce", "Responsive web", "Netlify"],
+    url: "https://shivshankarjewellery.netlify.app/",
   },
 ] as const;
 

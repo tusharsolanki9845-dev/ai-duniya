@@ -10,7 +10,7 @@ import PathFinder from "@/components/PathFinder";
 import ContactForm from "@/components/ContactForm";
 import RoverArt from "@/components/labs/RoverArt";
 import { NavAnchor, openAssistant } from "@/components/Chrome";
-import { COURSES, EXAMS, PRODUCTS, SITE } from "@/lib/site";
+import { COURSES, EXAMS, PRODUCTS, SHOWCASE, SITE } from "@/lib/site";
 import { useGoTo } from "@/lib/nav";
 
 const ICONS = { copilots: BrainCircuit, workflow: Network, labs: Code2 } as const;
@@ -133,6 +133,31 @@ export default function Home() {
           )}
         </DialogContent>
       </Dialog>
+
+      {/* ------------------------------ SELECTED WORK ------------------------------ */}
+      <section id="work" className="section">
+        <div className="wrap">
+          <Reveal className="flex flex-wrap items-end justify-between gap-8">
+            <div><div className="eyebrow">05 / Selected work</div><h2 className="h-sec mt-7">Things we&apos;ve <em>shipped.</em></h2></div>
+            <p className="lede max-w-xs">A few practical builds made for real businesses and real people.</p>
+          </Reveal>
+          <div className="mt-14 grid gap-5 md:grid-cols-2">
+            {SHOWCASE.map((project, i) => (
+              <Reveal key={project.title} delay={i * 0.1}>
+                <article className="glass card flex h-full min-h-[280px] flex-col justify-between">
+                  <div>
+                    <div className="mono flex items-center justify-between text-[10.5px] uppercase tracking-[.15em] text-white/55"><span>{project.label}</span><span className="text-lime">LIVE</span></div>
+                    <h3 className="mt-8 text-4xl tracking-tight">{project.title}</h3>
+                    <p className="mt-4 max-w-xl text-[15px] leading-relaxed text-white/65">{project.description}</p>
+                    <div className="mt-6 flex flex-wrap gap-2">{project.tags.map((tag) => <span key={tag} className="rounded-full border border-white/12 px-3 py-1.5 text-xs text-white/65">{tag}</span>)}</div>
+                  </div>
+                  <a className="btn btn-lime btn-sm mt-8 self-start" href={project.url} target="_blank" rel="noopener noreferrer">Visit live project <ArrowUpRight size={14} /></a>
+                </article>
+              </Reveal>
+            ))}
+          </div>
+        </div>
+      </section>
 
       {/* ------------------------------ PATH FINDER ------------------------------ */}
       <section id="path" className="section">
